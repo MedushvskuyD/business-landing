@@ -55,32 +55,92 @@ body {
 
 .modal {
   display: none;
-    
+  width: 300px;
+  padding: 30px;
+
   transform: translateY(-50px);
   transition: all 0.7s;
 
-  h2,
-  p {
+  &__input {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    outline-color: #ffc222;
+
     transform: translateY(-50px);
     opacity: 0;
-    transition: all 0.5s;
+    transition: all 0.4s;
+  }
+
+  &__btn {
+    cursor: pointer;
+    margin-bottom: 0;
+    background-color: #ffc222;
+
+    &:hover {
+      border: 1px solid #ffc222;
+      background-color: #fff;
+      color: #ffc222;
+    }
+  }
+
+  button {
+    display: none;
   }
 }
 
 .fancybox-slide--current {
   .modal,
-  .modal h2,
-  .modal p {
+  .modal__input {
     transform: translateY(0);
     opacity: 1;
   }
+}
 
-  .modal h2 {
-    transition-delay: 0.1s;
+.slick {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 70%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  background-color: #ffc222;
+  outline: none;
+
+  &-disabled {
+    background-color: transparent;
+    cursor: default;
   }
 
-  .modal p {
-    transition-delay: 0.3s;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "icomoon", serif;
+    color: #fff;
+  }
+
+  &-next {
+    right: 0;
+
+    &::before {
+      content: "\f105";
+    }
+  }
+
+  &-prev {
+    left: 0;
+
+    &::before {
+      content: "\f104";
+    }
   }
 }
 
@@ -128,13 +188,16 @@ body {
   }
 
   &__btn {
+    font-family: "Roboto", sans-serif;
     position: relative;
     float: right;
     font-size: 16px;
     line-height: 36px;
     color: #1b1b1b;
     background-color: #ffc222;
+    border: 1px solid #ffc222;
     padding: 5px 20px 4px 50px;
+    transition: 0.3s;
 
     &::before {
       content: "\f0b1";
@@ -212,47 +275,6 @@ body {
     margin-bottom: 45px;
   }
 
-  .slick {
-    cursor: pointer;
-    position: absolute;
-    z-index: 2;
-    top: 70%;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #fff;
-    background-color: #ffc222;
-    outline: none;
-
-    &-disabled {
-      background-color: transparent;
-      cursor: default;
-    }
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: "icomoon", serif;
-      color: #fff;
-    }
-
-    &-next {
-      right: 0;
-
-      &::before {
-        content: "\f105";
-      }
-    }
-
-    &-prev {
-      left: 0;
-
-      &::before {
-        content: "\f104";
-      }
-    }
-  }
 }
 
 .services {
@@ -534,9 +556,8 @@ body {
 
 .advantages {
   padding: 55px 0 40px;
-  background-image: url(../images/adv-fon.jpg) !important;
+  background-image: url(../images/advantages-fon.jpg);
   background-color: gray;
-
   background-repeat: no-repeat;
   background-position: center;
   min-height: 285px;
@@ -594,6 +615,7 @@ body {
 
 .news {
   padding: 55px 0 110px;
+  background-color: #f9f9f9;
 
   &__top {
     display: flex;
@@ -636,5 +658,202 @@ body {
     letter-spacing: 0.25px;
     padding: 5px 35px;
     border: 3px solid #e6e6e6;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__slider {
+    position: relative;
+    max-width: 555px;
+    width: 100%;
+    box-shadow: 0 5px 15.36px 0.64px rgba(128, 127, 127, 0.13);
+    padding: 60px 35px 45px 70px;
+
+    &::before {
+      content: "\f10e";
+      font-family: "icomoon", serif;
+      position: absolute;
+      height: 30px;
+      width: 65px;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background-color: #ffc222;
+      top: 0;
+      left: 70px;
+    }
+  }
+
+  &__slider-inner .slick {
+    top: auto;
+    bottom: -120px;
+
+    &-next {
+      right: -35px;
+    }
+
+    &-prev {
+      left: auto;
+      right: 20px;
+    }
+
+    &-disabled {
+      border-color: #dadada;
+      background-color: transparent;
+      cursor: default;
+
+      &::before {
+        color: #9e9c9c;
+      }
+    }
+  }
+
+  &__slider-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #242424;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+  }
+
+  &__slider-text {
+    margin-bottom: 30px;
+  }
+
+  &__slider-author {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1px;
+    color: #212020;
+  }
+
+  &__blog {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  &__images {
+    position: relative;
+  }
+
+  &__date {
+    position: absolute;
+    background-color: #ffc222;
+    width: 50px;
+    height: 55px;
+    color: #fff;
+    padding-top: 30px;
+    font-weight: 700;
+    top: -2px;
+    left: 10px;
+  }
+
+  &__blog-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    left: 18px;
+    letter-spacing: 0.5px;
+    color: #242424;
+    padding: 12px 0;
+  }
+
+  &__blog-text {
+    letter-spacing: 0.1px;
+    color: #5e5e5e;
+  }
+}
+
+.footer {
+  &__content {
+    background-color: #595959;
+    padding: 20px 0 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    max-width: 360px;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &__text {
+    color: #d3d2d2;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    margin-top: 10px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    font-weight: 400;
+    padding-left: 33px;
+
+    &::before {
+      content: "\f003";
+      font-family: "icomoon", serif;
+      position: absolute;
+      left: 0;
+      color: #ffc222;
+    }
+  }
+
+  &__phone::before {
+    content: "\f095";
+    left: 3px;
+  }
+
+  &__adress::before {
+    content: "\f041";
+    left: 3px;
+  }
+
+  &__map {
+    padding-top: 15px;
+    max-width: 630px;
+    width: 100%;
+
+    iframe {
+      border: none;
+      height: 250px;
+      width: 100%;
+    }
+  }
+
+  &__copy {
+    background-color: #303030;
+    color: #fff;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 8px 0;
   }
 }
