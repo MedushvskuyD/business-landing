@@ -1,0 +1,141 @@
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.default-btn {
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  padding: 8px 25px;
+  border: 1px solid #ffc222;
+  border-right-width: 20px;
+  outline: none;
+  transition: 0.3s;
+
+  &::before {
+    content: "\f105";
+    font-family: "icomoon", serif;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -12px;
+    color: #fff;
+  }
+
+  &:hover {
+    padding: 8px 30px;
+  }
+}
+
+.modal {
+  display: none;
+  width: 300px;
+  padding: 30px;
+
+  transform: translateY(-50px);
+  transition: all 0.7s;
+
+  &__input {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    outline-color: #ffc222;
+
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  &__btn {
+    cursor: pointer;
+    margin-bottom: 0;
+    background-color: #ffc222;
+
+    &:hover {
+      border: 1px solid #ffc222;
+      background-color: #fff;
+      color: #ffc222;
+    }
+  }
+
+  button {
+    display: none;
+  }
+}
+
+.fancybox-slide--current {
+  .modal,
+  .modal__input {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .modal {
+    cursor: default;
+  }
+}
+
+.slick {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 70%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  background-color: #ffc222;
+  outline: none;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "icomoon", serif;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      color: #303030;
+    }
+  }
+  
+  &-disabled {
+    background-color: transparent;
+    cursor: default;
+
+    &:hover {
+      &::before {
+        color: #fff;
+      }
+    }
+  }
+
+  &-next {
+    right: 0;
+
+    &::before {
+      content: "\f105";
+    }
+  }
+
+  &-prev {
+    left: 0;
+
+    &::before {
+      content: "\f104";
+    }
+  }
+}

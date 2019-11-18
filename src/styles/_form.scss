@@ -1,0 +1,149 @@
+.form {
+  padding-top: 30px;
+
+  &__inner {
+    padding-bottom: 40px;
+    background-image: url(../images/form-fon.png);
+    min-height: 460px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  &__title-box {
+    position: relative;
+    max-width: 520px;
+    padding-left: 140px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 105px;
+      height: 2px;
+      background-color: #ffc222;
+      left: 0;
+      top: 11px;
+    }
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #212020;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    letter-spacing: 0.1px;
+  }
+
+  &__box {
+    max-width: 850px;
+    padding-top: 45px;
+  }
+
+  &__box-inner {
+    display: flex;
+    justify-content: space-between;
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      outline-color: #ffc222;
+    }
+
+    label {
+      font-family: "Roboto", sans-serif;
+      line-height: 36px;
+      color: #282828;
+    }
+
+    input {
+      margin-bottom: 8px;
+      padding-left: 17px;
+      height: 40px;
+      border: 1px solid #e6e6e6;
+    }
+
+    select {
+      padding: 0 10px;
+      height: 40px;
+      border: 1px solid #e6e6e6;
+    }
+
+    textarea {
+      padding: 10px;
+      height: 207px;
+      border: 1px solid #e6e6e6;
+      resize: none;
+      margin-bottom: 40px;
+    }
+
+    .jq-selectbox {
+      display: block;
+      width: 100%;
+
+      &__select {
+        height: 40px;
+        border: 1px solid #e6e6e6;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        padding-left: 17px;
+      }
+
+      &__trigger-arrow::before {
+        content: "\f105";
+        font-family: "icomoon", serif;
+        position: absolute;
+        right: 17px;
+        top: 0;
+        transform: rotate(90deg);
+      }
+
+      &__dropdown {
+        width: 100%;
+        padding: 0;
+        border: 1px solid #e6e6e6;
+        background-color: #fff;
+        box-shadow: none;
+      }
+
+      li {
+        padding: 5px 17px;
+
+        &.selected {
+          background-color: #ffc222;
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: #a3abb1;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__box-left {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  &__box-right {
+    max-width: 555px;
+    width: 100%;
+  }
+
+  &__btn {
+    background-color: transparent;
+    color: #282828;
+    float: right;
+
+    &::before {
+      color: #282828;
+    }
+  }
+}
