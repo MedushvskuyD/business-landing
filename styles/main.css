@@ -86,6 +86,9 @@ body {
           transform: translateY(0);
   opacity: 1; }
 
+.fancybox-slide--current .modal {
+  cursor: default; }
+
 .slick {
   cursor: pointer;
   position: absolute;
