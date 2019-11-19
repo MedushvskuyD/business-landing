@@ -98,6 +98,10 @@
     display: flex;
     justify-content: space-between;
   }
+  
+  &__menu-btn {
+    display: none;
+  }
 
   &__menu li {
     display: inline-block;
@@ -119,4 +123,5 @@
       border-color: #ffc222;
     }
   }
+
 }
