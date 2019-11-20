@@ -7,6 +7,11 @@ $(document).ready(function() {
     infinite: false,
   });
 
+  $('#modalBtn').on('click', function() {
+    $('#modalInputName').val('');
+    $('#modalInputPhone').val('');
+  });
+
   $('#menuBtn').on('click', function() {
     $('#menuList').slideToggle();
   });
