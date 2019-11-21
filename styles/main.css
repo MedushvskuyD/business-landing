@@ -628,7 +628,8 @@
     padding-top: 30px;
     font-weight: 700;
     top: -2px;
-    left: 10px; }
+    left: 10px;
+    padding-left: 7px; }
   .news__blog-title {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -799,6 +800,8 @@
       max-width: 100%; }
     .form__box-right {
       max-width: 100%; }
+    .form__btn {
+      float: none; }
   .advantages__inner {
     display: block; }
   .advantages__item {
